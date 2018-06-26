@@ -11,5 +11,4 @@ public class EagerInitializationSingleton {
 	public static EagerInitializationSingleton getInstance() {
 		return instance;
 	}
-
 }

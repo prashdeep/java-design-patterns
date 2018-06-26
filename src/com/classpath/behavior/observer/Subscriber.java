@@ -10,7 +10,7 @@ public class Subscriber implements Observer {
 	}
 
 	@Override
-	public void update() {
+	public void publish() {
 		String message = (String) content.getUpdate(this);
 		System.out.println("Updated content "+message);
 	}

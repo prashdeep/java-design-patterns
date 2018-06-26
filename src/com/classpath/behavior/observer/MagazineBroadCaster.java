@@ -1,11 +1,12 @@
 package com.classpath.behavior.observer;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class MagazineBroadCaster implements Subject {
 
-	private Set<Observer> observers = new HashSet<>();
+	private List<Observer> observers = new ArrayList<>();
 
 	private String content;
 
@@ -18,30 +19,25 @@ public class MagazineBroadCaster implements Subject {
 	}
 
 	@Override
-	public void register(Observer obj) {
-		if (obj != null)
-			observers.add(obj);
+	public void subscribe(Observer obj) {
+		observers.add(obj);
 	}
 
 	@Override
-	public void unregister(Observer obj) {
+	public void unSubscribe(Observer obj) {
 		observers.remove(obj);
 	}
 
 	@Override
 	public void notifyObservers() {
-		Set<Observer> observersLocal = null;
-		observersLocal = new HashSet<>(this.observers);
+		List<Observer> observersLocal = null;
+		observersLocal = new ArrayList<>(this.observers);
 		for (Observer obj : observersLocal) {
-			obj.update();
+			obj.publish();
 		}
 
 	}
 
-	@Override
-	public Object getUpdate(Observer obj) {
-		return this.content;
-	}
 
 	// method to post message to the topic
 	public void postMessage(String content) {
@@ -49,5 +45,11 @@ public class MagazineBroadCaster implements Subject {
 		this.content = content;
 		notifyObservers();
 	}
+
+	@Override
+	public Object getUpdate(Observer obj) {
+		return this;
+	}
+
 
 }
