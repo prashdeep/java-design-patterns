@@ -6,12 +6,15 @@ public class AbstractConnectionFactory {
 	private static OracleDBConnectionFactory oracleDBConnectionFactory = OracleDBConnectionFactory.getInstance("", "",
 			"");
 
-	public static AbstractDBConnection getConnection(String dbType) {
-		if (dbType.equalsIgnoreCase("MYSQL")) {
+	public static AbstractDBConnection getConnection(DBType dbType) {
+		switch (dbType) {
+		case MYSQL:
 			return dbConnectionFactory.getConnection();
-		} else if (dbType.equalsIgnoreCase("ORACLE")) {
+
+		case ORACLE:
 			return oracleDBConnectionFactory.getConnection();
 		}
+
 		return null;
 	}
 

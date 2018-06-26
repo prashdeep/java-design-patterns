@@ -10,12 +10,12 @@ public class MagazineBroadCaster implements Subject {
 
 	private String content;
 
-	public MagazineBroadCaster(Set<Observer> observerList) {
+	public MagazineBroadCaster(List<Observer> observerList) {
 		this.observers.addAll(observerList);
 	}
-	
+
 	public MagazineBroadCaster() {
-		//default no argument constructor
+		// default no argument constructor
 	}
 
 	@Override
@@ -30,14 +30,12 @@ public class MagazineBroadCaster implements Subject {
 
 	@Override
 	public void notifyObservers() {
-		List<Observer> observersLocal = null;
-		observersLocal = new ArrayList<>(this.observers);
+		List<Observer> observersLocal = new ArrayList<>(this.observers);
 		for (Observer obj : observersLocal) {
 			obj.publish();
 		}
 
 	}
-
 
 	// method to post message to the topic
 	public void postMessage(String content) {
@@ -48,8 +46,7 @@ public class MagazineBroadCaster implements Subject {
 
 	@Override
 	public Object getUpdate(Observer obj) {
-		return this;
+		return this.content;
 	}
-
 
 }

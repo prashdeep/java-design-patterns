@@ -12,7 +12,8 @@ public class Subscriber implements Observer {
 	@Override
 	public void publish() {
 		String message = (String) content.getUpdate(this);
-		System.out.println("Updated content "+message);
+		
+		System.out.println("Updated content for  "+this.subscriberName+ " message: "+message);
 	}
 
 	@Override
