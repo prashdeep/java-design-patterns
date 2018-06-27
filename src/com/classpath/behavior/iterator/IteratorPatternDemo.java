@@ -1,8 +1,6 @@
 package com.classpath.behavior.iterator;
 
-
 public class IteratorPatternDemo {
-	
 	public static void main(String[] args) {
 		NameCollection cmpnyRepository = new NameCollection();
 	      
