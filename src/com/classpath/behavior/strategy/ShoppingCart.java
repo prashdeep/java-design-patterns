@@ -14,10 +14,12 @@ public class ShoppingCart {
 		Item two = new Item("Camera", 25_000.99);
 
 		cart.totalAmount = one.getPrice() + two.getPrice();
-		
-		PaymentStrategy codStrategy = (totalAmount)->{System.out.println(" Amount: " + totalAmount + " paid using COD");
-		return Status.SUCCESS;};
-		cart.pay(codStrategy);
+
+		PaymentStrategy ccStrategy = (amount) -> {
+			System.out.println("Paid using CreditCard > "+amount);
+			return Status.SUCCESS;
+		};
+		cart.pay(ccStrategy);
 
 	}
 

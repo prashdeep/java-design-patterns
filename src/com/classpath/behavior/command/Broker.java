@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Broker {
+	
 	private List<Trade> orderList = new ArrayList<Trade>();
 
 	public void processOrder(Trade trade) {
