@@ -9,6 +9,11 @@ public class MockHttpServlet extends AbstractTemplate {
 	@Override
 	void service() {
 		System.out.println("Called from the MockHttpService ");
+		mySpecificServiceMethod();
+	}
+	
+	private void mySpecificServiceMethod() {
+		
 	}
 
 	@Override
