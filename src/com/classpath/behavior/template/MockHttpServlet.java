@@ -2,9 +2,8 @@ package com.classpath.behavior.template;
 
 public class MockHttpServlet extends AbstractTemplate {
 
-	@Override
-	void init() {
-		System.out.println("Custom initilization logic");
+	public MockHttpServlet(String url, String hostName, String password) {
+		super(url, hostName, password);
 	}
 
 	@Override
