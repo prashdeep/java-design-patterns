@@ -1,12 +1,13 @@
 package com.classpath.behavior.iterator;
 
-public class NameIterator implements Iterator {
+public class NameIterator<T> implements Iterator<T> {
 	
-	private String name[];
+	private T name[];
+	
 	private int index;
 	
-	public NameIterator(String[] name) {
-		this.name = name;
+	public NameIterator(T[] name2) {
+		this.name = name2;
 	}
 
 	@Override
@@ -18,7 +19,7 @@ public class NameIterator implements Iterator {
 	}
 
 	@Override
-	public Object next() {
+	public T next() {
 		if(this.hasNext()){
             return name[index++];
 		}

@@ -1,7 +1,7 @@
 package com.classpath.behavior.iterator;
 
-public interface Collection {
+public interface Collection<T> {
 
-	public Iterator iterator();
+	public Iterator<T> iterator();
 	
 }

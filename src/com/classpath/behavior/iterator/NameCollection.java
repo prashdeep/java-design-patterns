@@ -1,14 +1,14 @@
 package com.classpath.behavior.iterator;
 
 
-public class NameCollection implements Collection {
+public class NameCollection implements Collection<String> {
 
 	 public String name[]={"Pradeep", "Praveen","Krishna","Kiran","Vinay"}; 
 		
 	@Override
-	public Iterator iterator() {
+	public Iterator<String> iterator() {
 		
-		return new NameIterator(name) ;
+		return new NameIterator<String>(name) ;
 	}
 	
 	
