@@ -7,7 +7,7 @@ public class Rectangle extends Shape{
 	}
 
 	@Override
-	public void applyColor() {
+	public void changeColorOfShape() {
 		color.applyColor();
 		
 	}
