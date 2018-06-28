@@ -4,8 +4,9 @@ public class FileWriterCaretaker {
 
 	private Object obj;
 	
-	public void save(FileWriterOriginator fileWriter){
+	public Object save(FileWriterOriginator fileWriter){
 		this.obj=fileWriter.save();
+		return this.obj;
 	}
 	
 	public void undo(FileWriterOriginator fileWriter){

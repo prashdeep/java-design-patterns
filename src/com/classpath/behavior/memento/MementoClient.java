@@ -11,7 +11,7 @@ public class MementoClient {
 		System.out.println(fileWriter + "\n\n");
 
 		// lets save the file
-		caretaker.save(fileWriter);
+		Object currentState = caretaker.save(fileWriter);
 		// now write something else
 		fileWriter.write("Second Set of Data\n");
 
