@@ -9,8 +9,9 @@ public class ChainOfResponsibilityTest {
 	}
 	
     private static AuthenticationProcessor getChainOfAuthProcessor() {
-        AuthenticationProcessor oAuthProcessor = new OAuthAuthenticationProcessor(null);
-        return new UsernamePasswordAuthenticationProcessor(oAuthProcessor);
+        AuthenticationProcessor oAuthProcessor = new SAMLAuthenticationProcessor(null);
+        AuthenticationProcessor samlAuthProcessor = new SAMLAuthenticationProcessor(oAuthProcessor);
+        return new UsernamePasswordAuthenticationProcessor(samlAuthProcessor);
     }
  
     
