@@ -1,4 +1,4 @@
-package com.classpath.structural.proxy;
+package com.classpath.structural.proxy.main;
 
 public interface Subject {
 	

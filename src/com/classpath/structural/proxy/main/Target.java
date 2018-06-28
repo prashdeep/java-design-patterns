@@ -1,6 +1,6 @@
-package com.classpath.structural.proxy;
+package com.classpath.structural.proxy.main;
 
-public class Target implements Subject{
+ class Target implements Subject{
 
 	@Override
 	public void request() {
