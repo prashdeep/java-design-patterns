@@ -2,14 +2,14 @@ package com.classpath.behavior.memento;
 
 public class FileWriterCaretaker {
 
-	private Object obj;
+	private FileWriterOriginator.Memento obj;
 	
-	public Object save(FileWriterOriginator fileWriter){
+	public FileWriterOriginator.Memento save(FileWriterOriginator fileWriter){
 		this.obj=fileWriter.save();
 		return this.obj;
 	}
 	
-	public void undo(FileWriterOriginator fileWriter){
-		fileWriter.undoToLastSave(obj);
+	public Object undo(FileWriterOriginator fileWriter){
+		return fileWriter.undoToLastSave(obj);
 	}
 }

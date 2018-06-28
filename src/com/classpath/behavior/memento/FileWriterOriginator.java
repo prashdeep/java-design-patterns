@@ -23,14 +23,15 @@ public class FileWriterOriginator {
 		return new Memento(this.fileName,this.content);
 	}
 	
-	public void undoToLastSave(Object obj){
+	public Memento undoToLastSave(Object obj){
 		Memento memento = (Memento) obj;
 		this.fileName= memento.fileName;
 		this.content=memento.content;
+		return memento;
 	}
 	
 	
-	private class Memento{
+	public class Memento{
 		private String fileName;
 		private StringBuilder content;
 		
@@ -38,5 +39,12 @@ public class FileWriterOriginator {
 			this.fileName=file;
 			this.content=new StringBuilder(content);
 		}
+
+		@Override
+		public String toString() {
+			return "Memento [fileName=" + fileName + ", content=" + content + "]";
+		}
+		
+		
 	}
 }
